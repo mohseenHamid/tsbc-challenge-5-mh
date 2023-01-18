@@ -246,11 +246,9 @@ function generatePassword() {
 			secretWord.push(getRandom(masterCategoryArray));
 		}
 	}
-	console.log(secretWord);
 
 	// Shuffling the generated password array
 	shuffle(secretWord);
-	console.log(secretWord);
 
 	// Joining the array elements to form a single string
 	return secretWord.join("");
