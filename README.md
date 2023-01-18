@@ -2,38 +2,41 @@
 
 ## Description
 
-Execute basic financial analysis on data via JS array operations.
+Create a password generator using JavaScript. The tool generates a password upon criteria set by user input via prompts & confirmations. This task heavily utilises array methods.
 
 ## User Story
 
 ```
-AS A front-end developer
-I WANT to use JS array operations on financial data
-SO THAT I can carry out financial analysis
+AS AN employee whose device(s) store confidential data
+I WANT to be able to generate a random password according to preset criteria
+SO THAT I can confidently secure my accounts as per requirements
 ```
 
 ## Acceptance Criteria
 
-1. The following calculations should be carried out:
-
-   - The total number of months included in the dataset
-   - The net total amount of Profit/Losses over the entire period
-   - The average of the changes in Profit/Losses over the entire period
-   - You will need to track what the total change in profits are from month to month and then find the average (Total/Number of months)
-   - The greatest increase in profits (date and amount) over the entire period
-   - The greatest decrease in losses (date and amount) over the entire period
-
-2. Print the analysis to the console.
+1. Generate a password when the button is clicked
+2. Present a series of prompts for password criteria
+   - Length of password
+     - Between 10 and 64 characters
+   - Character types
+     - Lowercase
+     - Uppercase
+     - Numeric
+     - Special characters ($@%&\*, etc)
+3. Each user input must be validated
+4. At least one character must be selected
+5. Upon prompt/confirmation completion, a suitable password should be generated
+6. The password should be displayed in the outlined box on the page
 
 ## Usage
 
-Please use the console on dev tools to view the analysis
+Please click on the Generate Password button to trigger a prompt and a series of confirmations. Upon completion, a password will be generated on the screen that can be copied.
 
 ## Webpage
 
 The following link takes you to the GitHub Pages deployment:
 
-- https://mohseenhamid.github.io/tsbc-console-finances-mh/
+- https://mohseenhamid.github.io/tsbc-challenge-5-mh/
 
 ## License
 
