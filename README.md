@@ -18,13 +18,13 @@ SO THAT I can confidently secure my accounts as per requirements
 2. Present a series of prompts for password criteria
    - Length of password
      - Between 10 and 64 characters
-   - Character types
+   - Character type categories
      - Lowercase
      - Uppercase
      - Numeric
      - Special characters ($ @ % & \ ( , etc)
 3. Each user input must be validated
-4. At least one character must be selected
+4. At least one of the four character categories must be selected
 5. Upon prompt/confirmation completion, a suitable password should be generated
 6. The password should be displayed in the outlined box on the page
 
