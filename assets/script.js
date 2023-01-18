@@ -96,18 +96,22 @@ let optNumeric;
 let optSpecialChar;
 
 // Shuffle array
-// Original src: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+// src: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
-	// While there remain elements to shuffle
-	for (let currentIndex = 0; currentIndex < array.length; currentIndex++) {
-		// Pick a remaining element.
-		hello = Math.floor(Math.random() * currentIndex);
+	// Initialise random index variable
+	let random = "";
 
-		// And swap it with the current element
-		[array[currentIndex], array[hello]] = [array[hello], array[currentIndex]];
+	// Loop through the array length
+	for (let currentIndex = 0; currentIndex < array.length; currentIndex++) {
+		// Pick a random element
+		random = Math.floor(Math.random() * currentIndex);
+
+		// Swap it with the current element
+		[array[currentIndex], array[random]] = [array[random], array[currentIndex]];
 	}
 	return array;
 }
+// ORIGINAL CODE
 // function shuffle(array) {
 //   // Setting the index of the variable being shifted to the final element
 // 	let currentIndex = array.length;
@@ -242,9 +246,11 @@ function generatePassword() {
 			secretWord.push(getRandom(masterCategoryArray));
 		}
 	}
+	console.log(secretWord);
 
 	// Shuffling the generated password array
 	shuffle(secretWord);
+	console.log(secretWord);
 
 	// Joining the array elements to form a single string
 	return secretWord.join("");
