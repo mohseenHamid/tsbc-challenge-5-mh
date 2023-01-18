@@ -2,7 +2,7 @@
 
 ## Description
 
-Create a password generator using JavaScript. The tool generates a password upon criteria set by user input via prompts & confirmations. This task heavily utilises array methods.
+Create a password generator using JavaScript. The tool generates a password that fulfils criteria set by the user via prompts & confirmations. This task heavily utilises array methods.
 
 ## User Story
 
@@ -22,7 +22,7 @@ SO THAT I can confidently secure my accounts as per requirements
      - Lowercase
      - Uppercase
      - Numeric
-     - Special characters ($@%&\*, etc)
+     - Special characters ($ @ % & \ ( , etc)
 3. Each user input must be validated
 4. At least one character must be selected
 5. Upon prompt/confirmation completion, a suitable password should be generated
