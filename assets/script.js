@@ -135,16 +135,22 @@ function shuffle(array) {
 // Function to prompt user for password options
 function getPasswordOptions() {
 	// Prompt user to input # of password characters
-	numChar = parseInt(
+	numChar = Number(
 		prompt(
-			"How many characters would you like your password to have? \n\nPlease input a number between 10 and 64"
+			"How many characters would you like your password to have? \n\nPlease input an integer value between 10 and 64"
 		)
 	);
 
 	// Validating the user input by stating the conditions
 	if (isNaN(numChar) || numChar > 64 || numChar < 10) {
-		alert(`Please input a number between 10 and 64!`);
-		// If invalid input, reset the function
+		alert(`Please input an integer value between 10 and 64!`);
+		// If a non-number or out of range, reset the function
+		getPasswordOptions();
+		// If a non-integer, reset the function
+	} else if (!Number.isInteger(numChar)) {
+		alert(
+			`Please input an INTEGER value between 10 and 64 - that means no decimal points!`
+		);
 		getPasswordOptions();
 	} else {
 		// If input is valid, alert the user to the requirement of selecting at least one of the character categories to construct the password from
