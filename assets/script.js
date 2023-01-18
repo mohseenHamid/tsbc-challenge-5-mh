@@ -95,7 +95,7 @@ let optUppercase;
 let optNumeric;
 let optSpecialChar;
 
-// Shuffle array
+// Shuffle array (inspired by stack)
 // src: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
 	// Initialise random index variable
@@ -111,7 +111,7 @@ function shuffle(array) {
 	}
 	return array;
 }
-// ORIGINAL CODE
+// ORIGINAL CODE FROM STACK
 // function shuffle(array) {
 //   // Setting the index of the variable being shifted to the final element
 // 	let currentIndex = array.length;
