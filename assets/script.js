@@ -172,54 +172,45 @@ function getPasswordOptions() {
 // Function to generate password with user input
 function generatePassword() {
 	// Define arrays
+	// Password array
 	let secretWord = [];
+	// Master array that will concatenate all selected categories to generate the remaining password characters at random
 	let masterCategoryArray = [];
+	// Array of the user confirmations used to determine the categories from which password will be generated
 	let charCategoriesChoiceArray = [
 		optLowercase,
 		optUppercase,
 		optNumeric,
 		optSpecialChar
 	];
+	// Array of category arrays that will be used to populate the masterCategoryArray
 	let charCategoriesArray = [
 		lowerCasedCharacters,
 		upperCasedCharacters,
 		numericCharacters,
 		specialCharacters
 	];
-	let count = 0;
+	// Array that will be generated based on the user confirmations
+	let chosenCategories = [];
 
 	for (let i = 0; i < charCategoriesArray.length; i++) {
 		if (charCategoriesChoiceArray[i]) {
 			masterCategoryArray = masterCategoryArray.concat(charCategoriesArray[i]);
-			count++;
+			chosenCategories.push(charCategoriesArray[i]);
 		}
 	}
 
 	// Simple maths to determine how many categories were selected + how many characters to take from each category + how many remaining characters are needed
-	let numCharPerCategory = Math.floor((numChar * 1) / count);
-	let remainChar = numChar - numCharPerCategory * count;
+	let numCharPerCategory = Math.floor((numChar * 1) / chosenCategories.length);
+	let remainChar = numChar - numCharPerCategory * chosenCategories.length;
 
 	// Generating the password according to the maths above + selected categories
-	if (optLowercase) {
+	chosenCategories.forEach(function (element) {
 		for (let i = 0; i < numCharPerCategory; i++) {
-			secretWord.push(getRandom(lowerCasedCharacters));
+			secretWord.push(getRandom(element));
 		}
-	}
-	if (optUppercase) {
-		for (let i = 0; i < numCharPerCategory; i++) {
-			secretWord.push(getRandom(upperCasedCharacters));
-		}
-	}
-	if (optNumeric) {
-		for (let i = 0; i < numCharPerCategory; i++) {
-			secretWord.push(getRandom(numericCharacters));
-		}
-	}
-	if (optSpecialChar) {
-		for (let i = 0; i < numCharPerCategory; i++) {
-			secretWord.push(getRandom(specialCharacters));
-		}
-	}
+	});
+	// Filling in the remaining password characters via random selection
 	if (remainChar > 0) {
 		for (let i = 0; i < remainChar; i++) {
 			secretWord.push(getRandom(masterCategoryArray));
